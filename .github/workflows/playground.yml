@@ -9,6 +9,10 @@ on:
 jobs:
   read_file:
     runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
     steps:
       - name: Read VERSION file
         id: vars
