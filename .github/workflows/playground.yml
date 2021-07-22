@@ -18,7 +18,6 @@ jobs:
         run: echo ::set-output name=version::$(cat .github/workflows/build_info)
       - name: Test output
         run: echo ${{ steps.vars.outputs.version }}
-
       -name: read Json
         id: json
           run: |
