@@ -1,2 +1,4 @@
-version name
-version info
+{
+  "name": "ivan",
+  "age": 50
+}
