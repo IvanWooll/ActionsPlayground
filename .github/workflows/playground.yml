@@ -1,0 +1,5 @@
+name: test passing in values
+
+        id: getversion
+        run: echo "::set-output name=version::$(cat ivan)"
+
