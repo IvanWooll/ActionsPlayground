@@ -7,4 +7,9 @@ on:
       - main
 
 jobs:
-  run: echo "::set-output name=version::$(cat ivan)"
+  read_file:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Read VERSION file
+        id: getversion
+        run: echo "::set-output name=version::$(cat ivan)"
