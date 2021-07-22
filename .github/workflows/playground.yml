@@ -1,2 +1,10 @@
 name: test passing in values
+
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
   run: echo "::set-output name=version::$(cat ivan)"
