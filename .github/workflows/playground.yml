@@ -11,5 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Read VERSION file
-        id: getversion
-        run: echo "::set-output name=version::$(cat ivan)"
+        id: vars
+        run: echo ::set-output name=version::$(cat ivan)
+      - name: Test output
+        run: echo ${{ steps.vars.outputs.version }}
