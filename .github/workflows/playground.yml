@@ -11,10 +11,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
       
       - name: Read VERSION file
         id: vars
-        run: echo ::set-output name=version::$(cat .github/workflows/ivan)
+        run: echo ::set-output name=version::$(cat .github/workflows/build_info)
       - name: Test output
         run: echo ${{ steps.vars.outputs.version }}
