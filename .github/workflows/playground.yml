@@ -16,11 +16,11 @@ jobs:
       - name: Read VERSION file
         id: vars
         run: echo ::set-output name=version::$(cat .github/workflows/build_info)
-      -name: read Json
-        id: json
-          run: |
-            # the following lines are only required for multi line json
-            content="${content//'%'/'%25'}"
-            content="${content//$'\n'/'%0A'}"
-            content="${content//$'\r'/'%0D'}"
-            # end of optional handling for multi line json
+      # -name: read Json
+      #   id: json
+      #     run: |
+      #       # the following lines are only required for multi line json
+      #       content="${content//'%'/'%25'}"
+      #       content="${content//$'\n'/'%0A'}"
+      #       content="${content//$'\r'/'%0D'}"
+      #       # end of optional handling for multi line json
