@@ -24,6 +24,7 @@ jobs:
       - run: |
           echo "${{fromJson(steps.set_var.outputs.packageJson).name}}"
           echo "${{fromJson(steps.set_var.outputs.packageJson).age}}"
+          echo "${{ github.event.head_commit.message }}"
       # - name: Read VERSION file
       #   id: vars
       #   run: echo ::set-output name=version::$(cat .github/workflows/build_info)
