@@ -9,4 +9,4 @@ jobs:
       uses: actions/checkout@v2
 
     - run: |
-        echo "job: ${{ github.event.github_job }}" 
+        echo "job: ${{ github.run_id }}" 
