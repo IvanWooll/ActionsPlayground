@@ -9,4 +9,4 @@ jobs:
       uses: actions/checkout@v2
 
     - run: |
-        echo "last commit: ${{ github.event.head_commit.message }}" 
+        echo "job: ${{ github.event.github_job }}" 
