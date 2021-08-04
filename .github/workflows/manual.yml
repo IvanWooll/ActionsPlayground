@@ -8,7 +8,7 @@ jobs:
       - name: Output Run ID
         run: echo ${{ github.run_id }}
       - name: Set Run Number
-        run: $GITHUB_RUN_NUMBER = 1
+        run: $env.GITHUB_RUN_NUMBER = 1
 
       - name: Output Run Number
         run: echo ${{ github.run_number }}
