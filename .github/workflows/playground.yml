@@ -1,30 +1,30 @@
-name: test passing in values
+# name: test passing in values
 
 
-on:
-  push:
-    branches:
-      - main
+# on:
+#   push:
+#     branches:
+#       - main
 
-jobs:
-  read_file:
-    runs-on: ubuntu-latest
+# jobs:
+#   read_file:
+#     runs-on: ubuntu-latest
 
-    steps:
-      - uses: actions/checkout@v2
-      - id: set_var
-        run: |
-          content=`cat .github/workflows/build_info`
-          # the following lines are only required for multi line (formatted) json
-          content="${content//'%'/'%25'}"
-          content="${content//$'\n'/'%0A'}"
-          content="${content//$'\r'/'%0D'}"
-          # end of optional handling for multi line json
-          echo "::set-output name=packageJson::$content"
-      - run: |
-          echo "${{fromJson(steps.set_var.outputs.packageJson).name}}"
-          echo "${{fromJson(steps.set_var.outputs.packageJson).age}}"
-          echo "${{ github.event.head_commit.message }}"
+#     steps:
+#       - uses: actions/checkout@v2
+#       - id: set_var
+#         run: |
+#           content=`cat .github/workflows/build_info`
+#           # the following lines are only required for multi line (formatted) json
+#           content="${content//'%'/'%25'}"
+#           content="${content//$'\n'/'%0A'}"
+#           content="${content//$'\r'/'%0D'}"
+#           # end of optional handling for multi line json
+#           echo "::set-output name=packageJson::$content"
+#       - run: |
+#           echo "${{fromJson(steps.set_var.outputs.packageJson).name}}"
+#           echo "${{fromJson(steps.set_var.outputs.packageJson).age}}"
+#           echo "${{ github.event.head_commit.message }}"
       # - name: Read VERSION file
       #   id: vars
       #   run: echo ::set-output name=version::$(cat .github/workflows/build_info)
