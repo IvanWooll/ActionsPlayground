@@ -5,6 +5,9 @@ jobs:
   printInputs:
     runs-on: ubuntu-latest
     steps:
+      - name: set env variable
+        run: echo 12 >> $GITHUB_ENV
+
       - name: Output Run ID
         run: echo ${{ github.run_id }}
 
